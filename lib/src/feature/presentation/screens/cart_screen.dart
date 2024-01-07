@@ -51,6 +51,37 @@ class CartScreen extends StatelessWidget {
                   },
                 ),
               ),
+              Padding(
+                padding: const EdgeInsets.all(36),
+                child: Container(
+                  decoration: BoxDecoration(
+                      color: Colors.green,
+                      borderRadius: BorderRadius.circular(8)),
+                  padding: const EdgeInsets.all(24),
+                  child: Row(
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Total Price',
+                            style: TextStyle(color: Colors.green[100]),
+                          ),
+                          const SizedBox(height: 4),
+                          Text(
+                            '\$${value.calculateTotal()}',
+                            style: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ),
             ],
           );
         },
