@@ -48,7 +48,9 @@ class HomeScreen extends StatelessWidget {
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2),
                 itemBuilder: (context, index) {
-                  return const GroceryItemTile();
+                  return const GroceryItemTile(
+                    
+                  );
                 },
               ),
             ),
