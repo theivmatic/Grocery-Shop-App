@@ -35,10 +35,14 @@ class IntroScreen extends StatelessWidget {
             height: 50,
           ),
           GestureDetector(
-            onTap: () => Navigator.pushReplacement(context,
-                MaterialPageRoute(builder: (context) {
-              return const HomeScreen();
-            })),
+            onTap: () => Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) {
+                  return const HomeScreen();
+                },
+              ),
+            ),
             child: Container(
               decoration: BoxDecoration(
                 color: Colors.deepPurple,
