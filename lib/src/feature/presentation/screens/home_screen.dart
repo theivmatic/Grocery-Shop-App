@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:grocery_shop_app/src/feature/domain/models/cart_model.dart';
+import 'package:grocery_shop_app/src/feature/presentation/screens/cart_screen.dart';
 import 'package:grocery_shop_app/src/feature/presentation/widgets/grocery_item_tile.dart';
 import 'package:provider/provider.dart';
 
@@ -10,6 +11,18 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) {
+              return CartScreen();
+            },
+          ),
+        ),
+        backgroundColor: Colors.black,
+        child: const Icon(Icons.shopping_bag),
+      ),
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -62,6 +75,7 @@ class HomeScreen extends StatelessWidget {
                         price: value.shopItems[index][1],
                         imagePath: value.shopItems[index][2],
                         color: value.shopItems[index][3],
+                        onPressed: () {},
                       );
                     },
                   );
