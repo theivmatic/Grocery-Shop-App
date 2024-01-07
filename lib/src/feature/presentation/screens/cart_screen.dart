@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:grocery_shop_app/src/feature/domain/models/cart_model.dart';
 import 'package:provider/provider.dart';
 
@@ -9,12 +10,25 @@ class CartScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('My Cart'),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        iconTheme: const IconThemeData(color: Colors.black),
       ),
       body: Consumer<CartModel>(
         builder: (context, value, child) {
           return Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 24),
+                child: Text(
+                  'My Cart',
+                  style: GoogleFonts.notoSerif(
+                    fontSize: 36,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
               Expanded(
                 child: ListView.builder(
                   itemCount: value.cartItems.length,
@@ -59,6 +73,7 @@ class CartScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(8)),
                   padding: const EdgeInsets.all(24),
                   child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -77,6 +92,28 @@ class CartScreen extends StatelessWidget {
                             ),
                           ),
                         ],
+                      ),
+                      Container(
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.green.shade100),
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        padding: const EdgeInsets.all(12),
+                        child: const Row(
+                          children: [
+                            Text(
+                              'Pay Now',
+                              style: TextStyle(
+                                color: Colors.white,
+                              ),
+                            ),
+                            Icon(
+                              Icons.arrow_forward_ios,
+                              size: 16,
+                              color: Colors.white,
+                            ),
+                          ],
+                        ),
                       ),
                     ],
                   ),
