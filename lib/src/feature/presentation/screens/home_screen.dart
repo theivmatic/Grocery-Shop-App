@@ -45,11 +45,18 @@ class HomeScreen extends StatelessWidget {
             ),
             Expanded(
               child: GridView.builder(
+                padding: const EdgeInsets.all(12),
+                itemCount: 4,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2),
+                  crossAxisCount: 2,
+                  childAspectRatio: 1 / 1.3,
+                ),
                 itemBuilder: (context, index) {
-                  return const GroceryItemTile(
-                    
+                  return GroceryItemTile(
+                    name: '',
+                    price: '',
+                    imagePath: '',
+                    color: '',
                   );
                 },
               ),
